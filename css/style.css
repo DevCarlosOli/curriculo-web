@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+*{
+    padding: 0%;
+    margin: 0%;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+}
+
+:target {
+    scroll-margin-top: 7em;
+}
+
+/*HEADER*/
+#bgDivCabecalho{    
+    background-color: #000315;
+    color: #fff;
+    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    z-index: 9999999;
+}
+
+.cabecalho{    
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cabecalho h1{
+    margin-top: 10px;
+}
+
+.cabecalho h5{
+    margin-top: -10px;
+}
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-lista{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-lista-item{
+    list-style: none;
+    display: inline;
+    margin: 20px;
+    text-align: center;
+}
+
+.menu-lista-item a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu-lista-item a:hover{
+    text-decoration: none;
+    color: #00aced;
+}
+
+.icons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 50px;
+}
+
+.icons #gmail{
+    font-size: 40px;
+}
+/*FIM-HEADER*/
+
+/*BANNER*/
+.principal-banner{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    background: url(../images/bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+.principal-banner-conteudo{
+    max-width: 650px;
+    margin-left: 550px;
+    margin-top: 60px
+}
+
+.principal-banner-conteudo h2{
+    color: #fff;
+    font-size: 3.0em;
+}
+
+.principal-banner-conteudo h2 span{
+    color: #00aced;
+    font-size: 1.3em;
+}
+
+.principal-banner-conteudo p{
+    font-size: 1.6em;
+    color: #fff;
+    text-align: justify;
+}
+/*FIM-BANNER*/
+
+/*EXP*/
+.principal-exp-conteudo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+}
+
+.principal-exp-conteudo p{
+    padding-top: 10px;
+}
+/*FIM-EXP*/
+
+/*FORMACAO*/
+.principal-formacao-conteudo{
+    text-align: justify;
+}
+/*FIM-FORMACAO*/
+
+/*HARDSKILLS*/
+.card-conteudo{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.card-conteudo .card-percent{
+    position: relative;
+    width: 170px;
+    height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-conteudo .card-percent .card-percent-circle{
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.card-conteudo .card-percent .card-percent-circle svg{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    transform: rotate(270deg);
+}
+
+.card-conteudo .card-percent .card-percent-circle svg circle{
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+    stroke-width: 2;
+    stroke: #140e0e;
+    transform: translate(5px, 5px);
+}
+
+.card-conteudo .card-percent .card-percent-circle svg circle:nth-child(2){
+    stroke: var(--clr);
+    stroke-dasharray: 440;
+    stroke-dashoffset: calc(440 - (440 * var(--num)) / 100);
+    opacity: 0;
+    animation: fadeIn 1s linear forwards;
+    animation-delay: 2.3s;
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.dot{
+    position: absolute;
+    inset: 5px;
+    z-index: 10;    
+    animation: animateDot 2s linear forwards;
+}
+
+@keyframes animateDot{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(calc(3.6deg * var(--num)));
+    }
+}
+
+.dot::before{
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--clr);
+    box-shadow: 0 0 10px var(--clr), 0 0 30px var(--clr);
+}
+
+.number{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 0;
+    animation: fadeIn 1s linear forwards;
+    animation-delay: 2.3s;
+}
+
+.number h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+.number h2 span{
+    font-weight: 300;
+    font-size: 0.5em;
+}
+
+.number p{
+    font-weight: 300;
+    font-size: 0.75em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+/*FIM-HARDSKILLS*/
+
+/*SOFTSKILLS*/
+.skillBar .skilBar-conteudo{
+    position: relative;
+    display: flex;
+    padding: 24px 10px 18px;
+}
+
+.skillBar .skilBar-conteudo .skillBar-conteudo-name{
+    position: relative;
+    width: 120px;
+    text-align: right;
+    margin-top: -2px;
+    text-transform: uppercase;
+}
+
+.skillBar .skilBar-conteudo .skillBar-conteudo-value{
+    position: relative;
+    width: 40px;
+    text-align: left;
+    margin-top: -2px;
+    text-transform: uppercase;
+}
+
+.skillBar .skilBar-conteudo .skillBar-conteudo-percent{
+    position: relative;
+    width: calc(100% - 160px);
+    height: 20px;
+    margin: 0 10px;
+    border-radius: 10px;
+    background-color: rgba(103, 103, 103, 0.333);
+    box-shadow: inset 0 0 10px #000;
+}
+
+.skillBar .skilBar-conteudo .skillBar-conteudo-percent .skillBar-conteudo-progress{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    border-radius: 10px;
+    background: #00aced;
+    box-shadow: inset 0 0 2px #000;
+    animation: animate 4s ease-in-out forwards;
+}
+
+@keyframes animate{
+    from{
+        width: 0;
+    }
+}
+/*FIM-SOFTSKILLS*/
+
+/*RODAPE*/
+.rodape{    
+    background-color: #000315;
+    color: #fff;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*FIM-RODAPE*/
+
+@media screen and (width: 1115px) {
+    #bgDivCabecalho{
+        height: 150px;
+    }
+    :target {
+        scroll-margin-top: 10em;
+    }
+}
